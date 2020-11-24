@@ -1,24 +1,9 @@
-# README
+*Tecnologías utilizadas: Ruby 2.6.4, Rails 5.2.4 y base de datos PostgreSQL*
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Pasos para levantar el proyecto
 
-Things you may want to cover:
+-clonar el repo
+-rails db:create
+-rails db:migrate
+-rails s
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
