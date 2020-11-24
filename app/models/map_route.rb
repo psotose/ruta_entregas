@@ -1,0 +1,2 @@
+class MapRoute < ApplicationRecord
+end
