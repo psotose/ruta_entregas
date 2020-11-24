@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nid: MyString
+  cargo: 1
+  start_time: MyString
+  delivery_time: MyString
+  map_route: one
+
+two:
+  nid: MyString
+  cargo: 1
+  start_time: MyString
+  delivery_time: MyString
+  map_route: two

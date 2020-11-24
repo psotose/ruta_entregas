@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_24_225518) do
+ActiveRecord::Schema.define(version: 2020_11_24_230623) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,4 +27,16 @@ ActiveRecord::Schema.define(version: 2020_11_24_225518) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "map_stops", force: :cascade do |t|
+    t.string "nid"
+    t.integer "cargo"
+    t.string "start_time"
+    t.string "delivery_time"
+    t.bigint "map_route_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["map_route_id"], name: "index_map_stops_on_map_route_id"
+  end
+
+  add_foreign_key "map_stops", "map_routes"
 end
