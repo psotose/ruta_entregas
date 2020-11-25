@@ -30,9 +30,11 @@ ActiveRecord::Schema.define(version: 2020_11_25_162059) do
 
   create_table "map_stops", force: :cascade do |t|
     t.string "nid"
-    t.integer "cargo"
-    t.string "start_time"
-    t.string "delivery_time"
+    t.string "base"
+    t.string "llegada"
+    t.string "salida"
+    t.integer "carga"
+    t.string "destino"
     t.bigint "map_route_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

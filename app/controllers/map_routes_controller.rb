@@ -44,6 +44,9 @@ class MapRoutesController < ApplicationController
       route[:date] = params[:date]
 
       @map_route = MapRoute.new(route)
+      @map_stops.each do |stop|
+        @map_route.map_stops.new(stop)
+      end        
       @map_route.save
 
     end
