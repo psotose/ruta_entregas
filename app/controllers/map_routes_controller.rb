@@ -6,9 +6,13 @@ class MapRoutesController < ApplicationController
   end
 
   def create
+    uploaded_file = params[:archivo]
+    @stops = JSON.parse(uploaded_file.read)
+    
     
   end
 
   def show
+    
   end
 end

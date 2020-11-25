@@ -4,7 +4,7 @@ class CreateMapRoutes < ActiveRecord::Migration[5.2]
       t.string :user
       t.string :file_name
       t.string :base
-      t.date :date
+      t.datetime :date
       t.string :start_time
       t.string :delivery_time
       t.integer :cargo

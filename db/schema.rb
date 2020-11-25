@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 2020_11_24_230623) do
     t.string "user"
     t.string "file_name"
     t.string "base"
-    t.date "date"
+    t.datetime "date"
     t.string "start_time"
     t.string "delivery_time"
     t.integer "cargo"
