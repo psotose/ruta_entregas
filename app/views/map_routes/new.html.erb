@@ -1,2 +1,15 @@
-<h1>MapRoutes#new</h1>
-<p>Find me in app/views/map_routes/new.html.erb</p>
+<h1 class="text-center">Carga de rutas</h1>
+<%= form_with(url: map_routes_path, html: {multipart: true}) do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name, placeholder: "Nombre usuario" %><br>
+
+  <%= f.label :date %>
+  <%= f.datetime_local_field :date %><br>
+
+  <%= f.file_field 'archivo', accept:".json" %>
+  <br>
+
+  <%= f.submit  "Cargar", class: 'btn btn-info' %><br>
+<% end %>
+
+<%= link_to 'Ver rutas cargadas', root_path %>
