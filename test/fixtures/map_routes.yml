@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  route_name: MyString
+  file_name: MyString
+  base: MyString
+  date: 2020-11-24
+  start_time: MyString
+  delivery_time: MyString
+  cargo: 2
+  route_time: MyString  
+
+  two:
+  route_name: MyString
+  file_name: MyString
+  base: MyString
+  date: 2020-11-24
+  start_time: MyString
+  delivery_time: MyString
+  cargo: 1
+  route_time: MyString
