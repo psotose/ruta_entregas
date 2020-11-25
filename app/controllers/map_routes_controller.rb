@@ -46,9 +46,14 @@ class MapRoutesController < ApplicationController
       @map_route = MapRoute.new(route)
       @map_stops.each do |stop|
         @map_route.map_stops.new(stop.slice(:nid, :base, :llegada, :salida, :carga, :destino))
-      end        
-      @map_route.save
-
+      end  
+      respond_to do |format|      
+        if @map_route.save
+          format.html { render "create", notice: 'La ruta ha sido generada éxitosamente.' }      
+        else
+          format.html { render "create", alert: 'No ha sido posible generar la ruta.' }      
+        end
+      end
     end
 
   end
