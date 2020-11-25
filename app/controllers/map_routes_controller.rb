@@ -29,8 +29,15 @@ class MapRoutesController < ApplicationController
       end  
     end
 
-    
-    
+    if valid
+      stops_sorted = @map_stops.sort_by { |map| map["llegada"] }
+      base = stops_sorted.first["base"]
+      start_time = stops_sorted.first["llegada"]
+      delivery_time = stops_sorted.last["salida"]
+      cargo = stops_sorted.inject(0) {|sum, n| sum + n["carga"].to_i}
+      
+      
+    end
   end
 
   def show
