@@ -2,26 +2,29 @@
 <table class="table">
   <thead class="thead-dark">
     <tr>
-      <th scope="col">Nombre carga</th>
-      <th scope="col">File</th>
+      <th scope="col">Nombre de importación</th>
+      <th scope="col">Nombre de archivo</th>
       <th scope="col">Base</th>
-      <th scope="col">Fecha</th>
-      <th scope="col">Hora inicio</th>
+      <th scope="col">Fecha de ruta</th>
+      <th scope="col">Hora inicio ruta</th>
       <th scope="col">Hora fin</th>
-      <th scope="col">Carga</th>
-      <th scope="col">Total viaje</th>
+      <th scope="col">Carga total</th>
+      <th scope="col">Tiempo de viaje total </th>
+      <th scope="col">Detalles ruta </th>
     </tr>
   </thead>
   <tbody>  
     <% @map_routes.each do |stop| %>
       <tr>
-        <td><%= stop%></td>
-        <td><%= stop%></td>
-        <td><%= stop %></td>
-        <td><%= stop%></td>
-        <td><%= stop%></td>
-        <td><%= stop%></td>
-        <td><%= stop%></td>
+        <td><%= stop.route_name%></td>
+        <td><%= stop.file_name %></td>
+        <td><%= stop.base %></td>
+        <td><%= stop.date %></td>
+        <td><%= stop.start_time %></td>
+        <td><%= stop.delivery_time%></td>
+        <td><%= stop.cargo%></td>
+        <td><%= stop.route_time%></td>
+        <td><%= link_to 'Ver detalle', map_stops_show_path %></td>
       </tr>
     <%end%>
   </tbody>

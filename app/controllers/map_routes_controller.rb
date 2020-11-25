@@ -45,7 +45,7 @@ class MapRoutesController < ApplicationController
 
       @map_route = MapRoute.new(route)
       @map_stops.each do |stop|
-        @map_route.map_stops.new(stop)
+        @map_route.map_stops.new(stop.slice(:nid, :base, :llegada, :salida, :carga, :destino))
       end        
       @map_route.save
 

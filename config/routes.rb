@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'map_stops/show'
   get 'map_routes/index'
   get 'map_routes/new', to: 'map_routes#new', as: 'new'
   post 'map_routes', to:'map_routes#create'
