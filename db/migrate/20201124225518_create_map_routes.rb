@@ -1,7 +1,7 @@
 class CreateMapRoutes < ActiveRecord::Migration[5.2]
   def change
     create_table :map_routes do |t|
-      t.string :user
+      t.string :route_name
       t.string :file_name
       t.string :base
       t.datetime :date

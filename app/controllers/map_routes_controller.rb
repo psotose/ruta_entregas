@@ -1,4 +1,6 @@
+require 'time'
 class MapRoutesController < ApplicationController
+  
   def index
     @map_routes = MapRoute.all
   end
@@ -30,17 +32,37 @@ class MapRoutesController < ApplicationController
     end
 
     if valid
+      route = {}
       stops_sorted = @map_stops.sort_by { |map| map["llegada"] }
-      base = stops_sorted.first["base"]
-      start_time = stops_sorted.first["llegada"]
-      delivery_time = stops_sorted.last["salida"]
-      cargo = stops_sorted.inject(0) {|sum, n| sum + n["carga"].to_i}
-      
-      
+      route[:base] = stops_sorted.first["base"]
+      route[:start_time] = stops_sorted.first["llegada"]
+      route[:delivery_time] = stops_sorted.last["salida"]
+      route[:cargo] = stops_sorted.inject(0) {|sum, n| sum + n["carga"].to_i}
+      route[:route_time] = route_total_time(start_time, delivery_time)
+      route[:user]
+      @map_route = MapRoute.new(route)
+
     end
+
   end
 
   def show
     
   end
+  
+  private
+  
+  def route_total_time(start_time, delivery_time)  
+    start = Time.parse(start_time)
+    delivery = Time.parse(delivery_time)
+    difference = delivery - start #tiempo en segundos
+    hours_minutes = (difference/60).divmod(60)
+    if hours_minutes.count == 2
+      "#{hours_minutes[0].to_i}:#{hours_minutes[1].to_i}"
+    else  
+      ''  
+    end  
+  end  
+
+  
 end

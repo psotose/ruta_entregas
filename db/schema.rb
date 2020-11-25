@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2020_11_25_162059) do
   enable_extension "plpgsql"
 
   create_table "map_routes", force: :cascade do |t|
-    t.string "user"
+    t.string "route_name"
     t.string "file_name"
     t.string "base"
     t.datetime "date"
