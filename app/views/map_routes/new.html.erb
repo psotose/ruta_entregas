@@ -1,7 +1,7 @@
 <h1 class="text-center">Carga de rutas</h1>
 <%= form_with(url: map_routes_path, html: {multipart: true}, local: true) do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name, placeholder: "Nombre usuario" %>
+  <%= f.label :route_name %>
+  <%= f.text_field :route_name, placeholder: "Nombre ruta" %>
     <br>
   <%= f.label :date %>
   <%= f.datetime_local_field :date %>

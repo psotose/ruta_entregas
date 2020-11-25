@@ -38,9 +38,13 @@ class MapRoutesController < ApplicationController
       route[:start_time] = stops_sorted.first["llegada"]
       route[:delivery_time] = stops_sorted.last["salida"]
       route[:cargo] = stops_sorted.inject(0) {|sum, n| sum + n["carga"].to_i}
-      route[:route_time] = route_total_time(start_time, delivery_time)
-      route[:user]
+      route[:route_time] = route_total_time(route[:start_time],route[:delivery_time])
+      route[:route_name] = params[:route_name]
+      route[:file_name] = uploaded_file.original_filename
+      route[:date] = params[:date]
+
       @map_route = MapRoute.new(route)
+      @map_route.save
 
     end
 
