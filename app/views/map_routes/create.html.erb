@@ -4,27 +4,14 @@
     <tr>
       <th scope="col">Nombre carga</th>
       <th scope="col">File</th>
-      <th scope="col">Base</th>
-      <th scope="col">Fecha</th>
-      <th scope="col">Hora inicio</th>
-      <th scope="col">Hora fin</th>
-      <th scope="col">Carga</th>
-      <th scope="col">Total viaje</th>
-      <th scope="col">Status</th>
     </tr>
   </thead>
-  <tbody>  
-    <% @stops.each do |stop| %>
-      <tr>
-        <td><%= stop%></td>
-        <td><%= stop%></td>
-        <td><%= stop %></td>
-        <td><%= stop%></td>
-        <td><%= stop%></td>
-        <td><%= stop%></td>
-        <td><%= stop%></td>
-        <td><%= stop%></td>
-      </tr>
+  <tbody>
+    <% @map_stops.each do |stop| %>
+    <tr>
+      <td><%= stop%></td>
+      <td><%= stop[:status]%></td>
+    </tr>
     <%end%>
   </tbody>
 </table>

@@ -1,3 +1,29 @@
-<h1 class="text-center">Rutas cargadas</h1>
-<p>Find me in app/views/map_routes/index.html.erb</p>
+<h1 class="text-center">Ruta creada</h1>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Nombre carga</th>
+      <th scope="col">File</th>
+      <th scope="col">Base</th>
+      <th scope="col">Fecha</th>
+      <th scope="col">Hora inicio</th>
+      <th scope="col">Hora fin</th>
+      <th scope="col">Carga</th>
+      <th scope="col">Total viaje</th>
+    </tr>
+  </thead>
+  <tbody>  
+    <% @map_routes.each do |stop| %>
+      <tr>
+        <td><%= stop%></td>
+        <td><%= stop%></td>
+        <td><%= stop %></td>
+        <td><%= stop%></td>
+        <td><%= stop%></td>
+        <td><%= stop%></td>
+        <td><%= stop%></td>
+      </tr>
+    <%end%>
+  </tbody>
+</table>
 <%= link_to 'Cargar ruta', new_path %>
