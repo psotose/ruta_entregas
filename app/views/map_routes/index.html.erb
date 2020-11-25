@@ -24,7 +24,7 @@
         <td><%= stop.delivery_time%></td>
         <td><%= stop.cargo%></td>
         <td><%= stop.route_time%></td>
-        <td><%= link_to 'Ver detalle', map_stops_show_path(stop) %></td>
+        <td><%= link_to 'Ver detalle', stops_path(stop[:id]) %></td>
       </tr>
     <%end%>
   </tbody>

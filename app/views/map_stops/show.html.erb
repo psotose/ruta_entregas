@@ -1,3 +1,28 @@
-<h1>MapStops#show</h1>
-<p>Find me in app/views/map_stops/show.html.erb</p>
-<%= @map_stops%>
+<h1 class="text-center">Detalle ruta</h1>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Nid</th>
+      <th scope="col">Base</th>
+      <th scope="col">Destino</th>
+      <th scope="col">Hora inicio ruta</th>
+      <th scope="col">Hora fin</th>
+      <th scope="col">Carga total</th>
+    </tr>
+  </thead>
+  <tbody>  
+    <% @map_stops.each do |stop|%>
+      <tr>
+        <td><%= stop.nid%></td>
+        <td><%= stop.base %></td>
+        <td><%= stop.destino%></td>
+        <td><%= stop.llegada %></td>
+        <td><%= stop.salida %></td>
+        <td><%= stop.carga%></td>
+      </tr>
+    <%end%>
+  </tbody>
+</table>
+
+
+<%= link_to 'Volver', root_path %>
