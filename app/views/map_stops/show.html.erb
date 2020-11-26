@@ -1,4 +1,7 @@
 <h1 class="text-center">Detalle ruta</h1>
+
+<p><%= image_tag "https://maps.googleapis.com/maps/api/staticmap?center=Santiago,Chile&zoom=11&size=550x300&scale=2&maptype=roadmap#{@markers}&key=#{ENV['GOOGLE_MAPS_API']}", alt: "Map" %></p>
+
 <table class="table">
   <thead class="thead-dark">
     <tr>
@@ -10,19 +13,18 @@
       <th scope="col">Carga total</th>
     </tr>
   </thead>
-  <tbody>  
+  <tbody>
     <% @map_stops.each do |stop|%>
-      <tr>
-        <td><%= stop.nid%></td>
-        <td><%= stop.base %></td>
-        <td><%= stop.destino%></td>
-        <td><%= stop.llegada %></td>
-        <td><%= stop.salida %></td>
-        <td><%= stop.carga%></td>
-      </tr>
+    <tr>
+      <td><%= stop.nid%></td>
+      <td><%= stop.base %></td>
+      <td><%= stop.destino%></td>
+      <td><%= stop.llegada %></td>
+      <td><%= stop.salida %></td>
+      <td><%= stop.carga%></td>
+    </tr>
     <%end%>
   </tbody>
 </table>
-
 
 <%= link_to 'Volver', root_path %>
