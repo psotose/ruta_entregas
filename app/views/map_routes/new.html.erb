@@ -1,12 +1,12 @@
 <h1 class="text-center">Carga de rutas</h1>
 <%= form_with(url: map_routes_path, html: {multipart: true}, local: true) do |f| %>
   <%= f.label :route_name %>
-  <%= f.text_field :route_name, placeholder: "Nombre ruta" %>
+  <%= f.text_field :route_name, placeholder: "Nombre ruta", required: true,  minlength: 2 %>
     <br>
   <%= f.label :date %>
-  <%= f.datetime_local_field :date %>
+  <%= f.datetime_local_field :date, required: true %>
     <br>
-  <%= f.file_field 'archivo', accept:".json" %>
+  <%= f.file_field 'archivo', accept:".json", required: true %>
     <br>
   <%= f.submit  "Cargar", class: 'btn btn-info' %>
     <br>
