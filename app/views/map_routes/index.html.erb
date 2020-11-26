@@ -7,16 +7,16 @@
   </div>
 </div>
 <div class="row">
-  <div class="col-sm-6 my-6">
+  <div class="col-6">
     <%= search_form_for @q do |f|%>
-        <div class="form-group">
-          <%= f.label :route_name_or_file_name_or_base_cont, "Búsqueda por nombre importación, nombre archivo o base" %>
-          <%= f.search_field :route_name_or_file_name_or_base_cont, class: 'form-control', placeholder: "Ingresa tu búsqueda" %>
-        </div> 
-        <div class="btn-group" role="group" aria-label="...">
+      <div class="form-group">
+        <%= f.label :route_name_or_file_name_or_base_cont, "Búsqueda por nombre importación, nombre archivo o base" %>
+        <%= f.search_field :route_name_or_file_name_or_base_cont, class: 'form-control', placeholder: "Ingresa tu búsqueda" %>
+      </div> 
+      <div class="btn-group" role="group" aria-label="...">
         <%= f.submit "Buscar", class: "btn btn-outline-primary" %>
         <%= link_to "Limpiar la búsqueda", root_path, class: "btn btn-outline-primary"%>
-        </div>
+      </div>
     <% end  %>    
   </div> 
 </div>
@@ -40,7 +40,7 @@
         <td><%= stop.route_name%></td>
         <td><%= stop.file_name %></td>
         <td><%= stop.base %></td>
-        <td><%= stop.date %></td>
+        <td><%= stop.date.strftime("%e-%m-%Y %H:%M") %></td>
         <td><%= stop.start_time %></td>
         <td><%= stop.delivery_time%></td>
         <td><%= stop.cargo%></td>
