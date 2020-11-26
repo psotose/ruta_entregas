@@ -3,9 +3,11 @@ class MapStopsController < ApplicationController
 
   def show 
     @map_stops = MapStop.where(map_route: @map_route).order(:llegada)
-
     @markers = create_markers(@map_stops)
-
+    respond_to do |format|
+      format.html 
+      format.json { render json: @map_stops }
+    end 
   end
 
   private
