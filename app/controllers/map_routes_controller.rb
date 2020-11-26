@@ -3,6 +3,7 @@ class MapRoutesController < ApplicationController
   
   def index
     @map_routes = MapRoute.all
+    
   end
 
   def new
@@ -12,6 +13,7 @@ class MapRoutesController < ApplicationController
     uploaded_file = params[:archivo]
     @map_stops = JSON.parse(uploaded_file.read)
     keys_base = ["nid", "base", "llegada", "salida", "carga", "destino"]
+    @error = ''
     valid = true
     # Valida que el file tiene todos los campos necesarios
     @map_stops.each do |stop|
@@ -51,9 +53,12 @@ class MapRoutesController < ApplicationController
         if @map_route.save
           format.html { render "create", notice: 'La ruta ha sido generada éxitosamente.' }      
         else
-          format.html { render "create", alert: 'No ha sido posible generar la ruta.' }      
+          @error = 'No ha sido posible generar la ruta.'
+          format.html { render "create"}      
         end
       end
+    else
+      @error = 'Hay valores en el archivo que no pudieron ser cargados. Revise la lista y arregle los valores.'
     end
 
   end
