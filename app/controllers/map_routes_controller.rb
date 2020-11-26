@@ -4,6 +4,10 @@ class MapRoutesController < ApplicationController
   def index
     @q = MapRoute.ransack(params[:q])
     @map_routes = @q.result 
+    respond_to do |format|
+      format.html 
+      format.json { render json: @map_routes }
+    end    
   end
 
   def new
@@ -53,10 +57,12 @@ class MapRoutesController < ApplicationController
         end  
         respond_to do |format|      
           if @map_route.save
-            format.html { render "create", notice: 'La ruta ha sido generada éxitosamente.' }      
+            format.html { render "create", notice: 'La ruta ha sido generada éxitosamente.' }   
+               
           else
             @error = 'No ha sido posible generar la ruta.'
-            format.html { render "create"}      
+            format.html { render "create"}    
+
           end
         end
       else

@@ -19,6 +19,8 @@ App web que permite ingresar rutas y paradas mediante archivos json y visualizar
 	  "destino": "-33.416222;-70.594666"
   }]
 ```  
+- El filtro implementado permite la búsqueda por el nombre de importación, nombre del archivo y base, ingresando desde un caracter en adelante.
+
 - La app se encuentra desplegada en la siguiente ruta de [Heroku](https://ruta-entregas.herokuapp.com/) 
 
 ## Pasos para levantar el proyecto
