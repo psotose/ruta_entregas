@@ -2,8 +2,8 @@ require 'time'
 class MapRoutesController < ApplicationController
   
   def index
-    @map_routes = MapRoute.all
-    
+    @q = MapRoute.ransack(params[:q])
+    @map_routes = @q.result 
   end
 
   def new
