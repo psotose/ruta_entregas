@@ -2,7 +2,7 @@ class MapStopsController < ApplicationController
   before_action :set_map_route, only: :show
 
   def show 
-    @map_stops = MapStop.where(map_route: @map_route)
+    @map_stops = MapStop.where(map_route: @map_route).order(:llegada)
 
     @markers = create_markers(@map_stops)
 
