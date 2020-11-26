@@ -1,4 +1,11 @@
-<h1 class="text-center">Detalle ruta</h1>
+<div class="row my-4">
+  <div class="col-7">
+    <h1 class="text-right">Detalle ruta</h1>
+  </div>
+  <div class="col-5 text-right">
+    <button type="button" class="btn btn-outline-info"><%= link_to 'Volver', root_path %></button>
+  </div>
+</div>
 
 <p><%= image_tag "https://maps.googleapis.com/maps/api/staticmap?center=Santiago,Chile&zoom=11&size=550x300&scale=2&maptype=roadmap#{@markers}&key=#{ENV['GOOGLE_MAPS_API']}", alt: "Map" %></p>
 
@@ -27,4 +34,4 @@
   </tbody>
 </table>
 
-<%= link_to 'Volver', root_path %>
+

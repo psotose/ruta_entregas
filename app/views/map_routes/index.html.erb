@@ -1,4 +1,11 @@
-<h1 class="text-center">Ruta creada</h1>
+<div class="row my-4">
+  <div class="col-6">
+    <h1 class="text-right">Ruta creada</h1>
+  </div>
+  <div class="col-6 text-right">
+    <button type="button" class="btn btn-outline-info"><%= link_to 'Cargar ruta', new_path %></button>
+  </div>
+</div>
 <table class="table">
   <thead class="thead-dark">
     <tr>
@@ -29,4 +36,4 @@
     <%end%>
   </tbody>
 </table>
-<%= link_to 'Cargar ruta', new_path %>
+

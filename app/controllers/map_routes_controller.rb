@@ -3,6 +3,7 @@ class MapRoutesController < ApplicationController
   
   def index
     @map_routes = MapRoute.all
+    
   end
 
   def new
